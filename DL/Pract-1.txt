@@ -1,0 +1,134 @@
+#Pytorch
+#importing torch
+import torch
+#creating tensors
+t1=torch.tensor([1,2,3,4])
+t2=torch.tensor([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
+#printing tensors:
+print ("Tensor t1:\n",t1)
+print("\n Tensor t2:\n",t2)
+#Rank of tensors:
+print("Rank of t1:",len(t1.shape))
+print("Rank of t2:",len(t2.shape))
+#Sahape of tensors:
+print("Rank of t1:",t1.shape)
+print("Rank of t2:",t2.shape)
+
+
+#importing torch module
+import torch
+import numpy as np
+#list of values to be stored as tensor
+data1 =[1,2,3,4,5,6]
+data2 =np.array([1.5,3.4,6.8,9.3,7.0,2.8])
+#creating tensors and printing
+t1=torch.tensor(data1)
+t2=torch.Tensor(data1)
+t3=torch.as_tensor(data2)
+t4=torch.from_numpy(data2)
+print("Tensor: ",t1, "Data type: ", t1.dtype,"\n")
+print("Tensor: ",t2, "Data type: ", t2.dtype,"\n")
+print("Tensor: ",t3, "Data type: ", t3.dtype,"\n")
+print("Tensor: ",t4, "Data type: ", t4.dtype,"\n")
+
+
+# import torch module
+import torch
+# defining tensor
+t = torch.tensor([[1, 2, 3, 4],[5, 6, 7, 8],[9, 10, 11, 12]])
+# reshaping the tensor
+print("Reshaping")
+print(t.reshape(6, 2))
+# resizing the tensor
+print("\nResizing")
+print(t.resize(2, 6))
+# transposing the tensor
+print("\nTransposing")
+print(t.transpose(1,0))
+
+
+# import torch module
+import torch
+# defining two tensors
+t1 = torch.tensor([1, 2, 3, 4])
+t2 = torch.tensor([5, 6, 7, 8])
+# adding two tensors
+print("tensor2 + tensor1")
+print(torch.add(t2, t1))
+# subtracting two tensor
+print("\ntensor2 - tensor1")
+print(torch.sub(t2, t1))
+# multiplying two tensors
+print("\ntensor2 * tensor1")
+print(torch.mul(t2, t1))
+# diving two tensors
+print("\ntensor2 / tensor1")
+print(torch.div(t2, t1))
+
+
+# importing torch
+import torch
+# creating a tensor
+t1=torch.tensor(1.0, requires_grad = True)
+t2=torch.tensor(2.0, requires_grad = True)
+# creating a variable and gradient
+z=100 * t1 * t2
+z.backward()
+# printing gradient
+print("dz/dt1 : ", t1.grad.data)
+print("dz/dt2 : ", t2.grad.data)
+
+
+#Tenserflow
+import tensorflow as tf
+print(tf.__version__)
+
+
+#First create a scalar using tf.constant
+scalar=tf.constant(7)
+print(scalar)
+print(scalar.ndim)
+
+
+#Create a vector
+vector=tf.constant([10,10])
+print(vector)
+print(vector.ndim)
+
+
+#Creating matrix
+matrix=tf.constant([
+[10,11],[12,13]])
+print(matrix)
+print(matrix.ndim)
+
+
+#Simple Calculation using tensor
+basic_tensor=tf.constant([[10,11],[12,13]])
+print(basic_tensor)
+
+
+#Add, subtract, division, multiply
+print(basic_tensor+10)
+print(basic_tensor-10)
+print(basic_tensor*10)
+print(basic_tensor/10)
+
+
+#Matrix multiplication
+tensor_011=tf.constant([[2,2],[4,4]])
+tensor_012=tf.constant([[2,3],[4,5]])
+print(tf.matmul(tensor_011,tensor_012))
+
+
+#To find max and min value
+tensor_013 = tf.constant([[1,2,3],[4,5,6],[7,8,9]],dtype='float32')
+print(tf.reduce_min(tensor_013))
+print(tf.reduce_max(tensor_013))
+print(tf.reduce_sum(tensor_013))
+
+
+#Square, square root and log
+print(tf.sqrt(tensor_013))
+print(tf.square(tensor_013))
+print(tf.math.log(tensor_013))
